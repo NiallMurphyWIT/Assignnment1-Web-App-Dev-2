@@ -4,6 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import PostForm from '../src/components/postForm/';
 import PostItem from '../src/components/postItem';
 import PostList from '../src/components/postList';
+import { action } from "@storybook/addon-actions";
 
 
 const post = {
@@ -20,10 +21,8 @@ storiesOf("Game App/Post Form", module).add("default", () => <PostForm />);
 
 
 storiesOf('Game App/Post Item', module)
-    .add('default', () => <PostItem post= { post }  />
-    )
-    .add('No hyperlink', () => <PostItem post= { { ...post, link: ''} }  />
-    )
+    .add("default", () => <PostItem post={post} upvoteHandler={action("upvoted")} /> )
+    .add("No hyperlink", () => <PostItem post={{ ...post, link: "" }} upvoteHandler={action("upvoted")}/>);
 
     storiesOf('Game App/Post List', module)
     .add('default', () => { 

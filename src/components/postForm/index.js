@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import './postForm.css';
 
+
+
 export default class Form extends Component {
+    state = { title: '', author: '', link: ''};
     render() {
         return (
         <form  className="form bg-dark text-light">
