@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import './postItem.css';
 import "../../fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from 'react-router-dom';
+
 
 export default class PostItem extends Component {
     handleVote = () =>  this.props.upvoteHandler(this.props.post.id);
@@ -20,7 +22,7 @@ export default class PostItem extends Component {
                 <span className="postitem">
                     {line}
                     <span>
-                        <a href="/">Comments</a>
+                        <Link to={`/posts/${this.props.post.id}` }>Comments</Link>
                     </span>
                 </span>
                 <p className="author">{this.props.post.author}</p>
