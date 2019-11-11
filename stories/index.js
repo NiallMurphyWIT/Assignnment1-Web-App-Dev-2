@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import PostForm from '../src/components/postForm/';
 import PostItem from '../src/components/postItem';
+import PostList from '../src/components/postList';
 
 
 const post = {
@@ -23,3 +24,14 @@ storiesOf('Game App/Post Item', module)
     )
     .add('No hyperlink', () => <PostItem post= { { ...post, link: ''} }  />
     )
+
+    storiesOf('Game App/Post List', module)
+    .add('default', () => { 
+        const defaultPosts = [
+            { ...post, id: 1, title: 'Post 1', upvotes: 10 },
+            { ...post, id: 2, title: 'Post 2', upvotes: 20 },
+            { ...post, id: 3, title: 'Post 3', upvotes: 30 },
+            { ...post, id: 4, title: 'Post 4', upvotes: 40 }
+        ];
+    return <PostList posts= { defaultPosts }  />
+});
