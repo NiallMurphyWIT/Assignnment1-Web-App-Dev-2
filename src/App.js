@@ -5,6 +5,11 @@ import api from './dataStore/stubAPI';
 import _ from 'lodash';
 
 export default class App extends Component {
+    addPostItem = (title, author, link) => {
+      api.add(title, author, link);
+      this.setState({});
+    };
+
     incrementUpvote = (id) => {
       api.upvote(id) ;
       this.setState({});
@@ -21,7 +26,7 @@ export default class App extends Component {
             </div>
             <div className="row">
                 <div className="col-md-4 ">
-                    <Form />
+                    <Form handleAdd={this.addPostItem} />
                 </div>
                 <div className="col-md-8">
                     <PostList posts={posts} 
