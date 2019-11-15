@@ -21,7 +21,7 @@ First go to the main 'Assignment1' folder in a terminal and install 'npm install
 
 Diagram of app's data model included. 
 
-![][model](model.PNG)
+![model](model.PNG)
 
 
 ## UI Design.
