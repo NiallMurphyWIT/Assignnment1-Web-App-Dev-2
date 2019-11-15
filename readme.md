@@ -28,9 +28,9 @@ Diagram of app's data model included.
 
 The main page, where posts can be submitted to the site. Post can also be upvoted here and comments can be leeft on the posts. Clicking on comments brings you to the comments page where they can be left and other comments can be upvoted. 
 
-![][main](main.PNG)
+![main](main.PNG)
 
-![][detail](detail.PNG)
+![detail](detail.PNG)
 
 ## Routing.
 
@@ -46,7 +46,7 @@ Route from main page to comments page by selecting any of the comments buttons (
 
 Screenshot included of expanded Storybook.
 
-![][stories](stories.PNG)
+![stories](stories.PNG)
 
 ## Independent learning attempt
 
