@@ -21,16 +21,16 @@ First go to the main 'Assignment1' folder in a terminal and install 'npm install
 
 Diagram of app's data model included. 
 
-![][screenshot](./img/model.png)
+![][model](model.png)
 
 
 ## UI Design.
 
 The main page, where posts can be submitted to the site. Post can also be upvoted here and comments can be leeft on the posts. Clicking on comments brings you to the comments page where they can be left and other comments can be upvoted. 
 
-![][screenshot](./img/main.png)
+![][main](main.png)
 
-![][screenshot](./img/details.png)
+![][detail](detail.png)
 
 ## Routing.
 
@@ -46,7 +46,7 @@ Route from main page to comments page by selecting any of the comments buttons (
 
 Screenshot included of expanded Storybook.
 
-![][screenshot](./img/stories.png)
+![][stories](stories.png)
 
 ## Independent learning.
 
