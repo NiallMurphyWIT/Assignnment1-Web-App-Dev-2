@@ -21,16 +21,16 @@ First go to the main 'Assignment1' folder in a terminal and install 'npm install
 
 Diagram of app's data model included. 
 
-![][model](model.png)
+![][model](model.PNG)
 
 
 ## UI Design.
 
 The main page, where posts can be submitted to the site. Post can also be upvoted here and comments can be leeft on the posts. Clicking on comments brings you to the comments page where they can be left and other comments can be upvoted. 
 
-![][main](main.png)
+![][main](main.PNG)
 
-![][detail](detail.png)
+![][detail](detail.PNG)
 
 ## Routing.
 
@@ -46,13 +46,13 @@ Route from main page to comments page by selecting any of the comments buttons (
 
 Screenshot included of expanded Storybook.
 
-![][stories](stories.png)
+![][stories](stories.PNG)
 
-## Independent learning.
+## Independent learning attempt
 
 I researched how to add a login/signup page so that I coould have users for the app but I was unfortunately unable to get this to work.
 
-[model]: ./img/model.png
-[main]: ./img/main.png
-[detail]: ./img/detail.png
-[stories]: ./img/stories.png
+[model]: ./img/model.PNG
+[main]: ./img/main.PNG
+[detail]: ./img/detail.PNG
+[stories]: ./img/stories.PNG
