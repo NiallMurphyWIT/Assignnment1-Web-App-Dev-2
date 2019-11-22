@@ -18,6 +18,12 @@ class CommentPage extends Component {
         this.setState({});
     };
 
+    decrementUpvote = (commentId) => {
+      let pid =  this.getId()
+      api.downvoteComment(pid,commentId) ;
+      this.setState({});
+    };
+
     getId = () => parseInt( this.props.match.params.post_id, 10);
 
     render() {
@@ -35,7 +41,8 @@ class CommentPage extends Component {
               <div className="col-md-9 col-md-offset-1">
                 <h3>{line} </h3>
                 <CommentList comments={comments}
-                    upvoteHandler={this.incrementUpvote } />
+                    upvoteHandler={this.incrementUpvote }
+                    downvoteHandler={this.decrementUpvote} />
                 <Form post={post}  addCommentHandler={this.addComment} />
               </div>
             </div>
