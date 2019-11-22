@@ -89,6 +89,15 @@ class StubAPI {
         return false;
     }
 
+    downvote(id) {
+        let index = _.findIndex(this.posts, post => post.id === id);
+        if (index !== -1) {
+        this.posts[index].upvotes -= 1;
+        return true;
+        }
+        return false;
+    }
+
     getPost(id) {
         let index = _.findIndex(this.posts, post => post.id === id);
         let result = index !== -1 ? this.posts[index] : null;
@@ -110,6 +119,14 @@ class StubAPI {
         let index = _.findIndex(post.comments, c => c.id === commentId);
         if (index !== -1) {
         post.comments[index].upvotes += 1;
+        }
+    }
+
+    downvoteComment(postId, commentId) {
+        let post = this.getPost(postId);
+        let index = _.findIndex(post.comments, c => c.id === commentId);
+        if (index !== -1) {
+        post.comments[index].upvotes -= 1;
         }
     }
 }

@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 
 
 export default class PostItem extends Component {
-    handleVote = () =>  this.props.upvoteHandler(this.props.post.id);
+    handleUpVote = () =>  this.props.upvoteHandler(this.props.post.id);
+    handleDownVote = () => this.props.downvoteHandler(this.props.post.id);
     render() {
         let line = this.props.post.link ? (
             <a href={this.props.post.link}>{this.props.post.title}</a>
@@ -15,9 +16,12 @@ export default class PostItem extends Component {
         );
         return (
             <Fragment>
-                <span className="ptr" onClick={this.handleVote}>
+                <span className="ptr" onClick={this.handleUpVote}>
                     <FontAwesomeIcon icon={["fas", "thumbs-up"]} size="2x" />
                 {` ${this.props.post.upvotes}`}
+                </span>
+                <span className="ptr" onClick={this.handleDownVote}>
+                    <FontAwesomeIcon icon={["fas","thumbs-down"]} size="2x" />
                 </span>
                 <span className="postitem">
                     {line}

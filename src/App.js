@@ -14,6 +14,13 @@ export default class App extends Component {
       api.upvote(id) ;
       this.setState({});
     };
+
+    decrementUpvote = (id) => {
+      api.downvote(id) ;
+      this.setState({});
+    }
+
+
     render() {
         let posts = _.sortBy(api.getAll(), post => -post.upvotes);
         return (
@@ -23,7 +30,7 @@ export default class App extends Component {
                 <Form handleAdd={this.addPostItem} />
               </div>
               <div className="col-md-8">
-                <PostList posts={posts} upvoteHandler={this.incrementUpvote} />
+                <PostList posts={posts} upvoteHandler={this.incrementUpvote} downvoteHandler={this.decrementUpvote}/>
               </div>
             </div>
           </div>
