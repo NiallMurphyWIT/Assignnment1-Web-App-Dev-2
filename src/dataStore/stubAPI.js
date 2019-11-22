@@ -80,6 +80,15 @@ class StubAPI {
         return newLen > len;
     }
 
+    delete(id) {
+        let index = _.findIndex(this.posts, post => post.id === id);
+        if (index !== -1) {
+        this.posts[index].upvotes = -1;
+        return true;
+        }
+        return false;
+    }
+
     upvote(id) {
         let index = _.findIndex(this.posts, post => post.id === id);
         if (index !== -1) {

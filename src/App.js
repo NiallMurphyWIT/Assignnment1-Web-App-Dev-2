@@ -20,6 +20,11 @@ export default class App extends Component {
       this.setState({});
     }
 
+    removePost = (id) => {
+      api.delete(id) ;
+      this.setState({});
+    }
+
 
     render() {
         let posts = _.sortBy(api.getAll(), post => -post.upvotes);
@@ -30,7 +35,8 @@ export default class App extends Component {
                 <Form handleAdd={this.addPostItem} />
               </div>
               <div className="col-md-8">
-                <PostList posts={posts} upvoteHandler={this.incrementUpvote} downvoteHandler={this.decrementUpvote}/>
+                <PostList posts={posts} upvoteHandler={this.incrementUpvote} 
+                downvoteHandler={this.decrementUpvote} deleteHandler={this.removePost}/>
               </div>
             </div>
           </div>

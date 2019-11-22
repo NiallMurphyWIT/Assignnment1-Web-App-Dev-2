@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 export default class PostItem extends Component {
     handleUpVote = () =>  this.props.upvoteHandler(this.props.post.id);
     handleDownVote = () => this.props.downvoteHandler(this.props.post.id);
+    handleDelete = () => this.props.deleteHandler(this.props.post.id);
     render() {
         let line = this.props.post.link ? (
             <a href={this.props.post.link}>{this.props.post.title}</a>
@@ -25,6 +26,9 @@ export default class PostItem extends Component {
                 </span>
                 <span className="postitem">
                     {line}
+                    <span className="ptr" onClick={this.handleDelete}>
+                        <FontAwesomeIcon icon={["fas", "trash-alt"]} size="1x" />
+                    </span>
                     <span>
                         <Link to={`/posts/${this.props.post.id}` }>Comments</Link>
                     </span>

@@ -8,7 +8,8 @@ export default class PostList extends Component {
              <PostItem key={index} 
                  post={post} 
                  upvoteHandler={this.props.upvoteHandler} 
-                 downvoteHandler={this.props.downvoteHandler}/> 
+                 downvoteHandler={this.props.downvoteHandler}
+                 deleteHandler={this.props.deleteHandler}/> 
          );
       return <Fragment>{items}</Fragment>;
     }
