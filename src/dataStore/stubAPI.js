@@ -97,8 +97,14 @@ class StubAPI {
     downvote(id) {
         let index = _.findIndex(this.posts, post => post.id === id);
         if (index !== -1) {
-        this.posts[index].upvotes -= 1;
-        return true;
+            if (this.posts[index].upvotes === 0){
+                let elements = _.remove(this.posts, post => post.id === id);
+                return elements;
+            }
+            else{
+                this.posts[index].upvotes -= 1;
+                return true;
+            }
         }
         return false;
     }
