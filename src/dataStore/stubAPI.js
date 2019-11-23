@@ -137,8 +137,22 @@ class StubAPI {
         let post = this.getPost(postId);
         let index = _.findIndex(post.comments, c => c.id === commentId);
         if (index !== -1) {
-        post.comments[index].upvotes -= 1;
+            if(post.comments[index].upvotes === 0){
+                let commentElements = _.remove(post.comments, c => c.id === commentId);
+                return commentElements;
+            }
+            else{
+                post.comments[index].upvotes -= 1;
+                return true;
+            }
         }
+        return false;
+    }
+
+    deleteComment(postId, commentId){
+        let post = this.getPost(postId);
+        let elements = _.remove(post.comments, c => c.id === commentId);
+        return elements;
     }
 }
 

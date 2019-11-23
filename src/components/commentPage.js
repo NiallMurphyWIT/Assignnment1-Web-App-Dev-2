@@ -24,6 +24,12 @@ class CommentPage extends Component {
       this.setState({});
     };
 
+    removeComment = (commentId) => {
+      let pid = this.getId()
+      api.deleteComment(pid,commentId) ;
+      this.setState({});
+    }
+
     getId = () => parseInt( this.props.match.params.post_id, 10);
 
     render() {
@@ -42,7 +48,8 @@ class CommentPage extends Component {
                 <h3>{line} </h3>
                 <CommentList comments={comments}
                     upvoteHandler={this.incrementUpvote }
-                    downvoteHandler={this.decrementUpvote} />
+                    downvoteHandler={this.decrementUpvote} 
+                    deleteHandler={this.removeComment}/>
                 <Form post={post}  addCommentHandler={this.addComment} />
               </div>
             </div>
