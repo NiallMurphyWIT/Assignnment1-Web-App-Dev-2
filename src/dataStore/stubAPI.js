@@ -81,12 +81,8 @@ class StubAPI {
     }
 
     delete(id) {
-        let index = _.findIndex(this.posts, post => post.id === id);
-        if (index !== -1) {
-        this.posts[index].upvotes = -1;
-        return true;
-        }
-        return false;
+        let elements = _.remove(this.posts, post => post.id === id);
+        return elements;
     }
 
     upvote(id) {
