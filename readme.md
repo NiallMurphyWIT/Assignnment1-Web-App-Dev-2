@@ -10,8 +10,13 @@ The concept of this app is to be a news/update forum for the game 'Teamfight Tac
 
 - Post an update with a Title, Link to news/update, and name of poster.
 - Upvote posts
+- Downvote posts
 - Leave comments under posts
 - Upvote comments
+- Downvote comments
+- Delete posts
+- Delete comments
+- Posts and comments are automatically deleted if they reach a negative amount of votes
 
 ## Setup.
 
@@ -26,7 +31,7 @@ Diagram of app's data model included.
 
 ## UI Design.
 
-The main page, where posts can be submitted to the site. Post can also be upvoted here and comments can be leeft on the posts. Clicking on comments brings you to the comments page where they can be left and other comments can be upvoted. 
+The main page, where posts can be submitted to the site. Post can also be upvoted and downvoted here and comments can be left on the posts. Posts can also be deleted, their is an edit option for posts but it is not fully implemneted. Clicking on comments brings you to the comments page where they can be left and other comments can be upvoted, downvoted or deleted. 
 
 ![main](main.PNG)
 
@@ -34,7 +39,7 @@ The main page, where posts can be submitted to the site. Post can also be upvote
 
 ## Routing.
 
-Route from main page to comments page by selecting any of the comments buttons (to the left of each post), also route from comments page back to the main app page by selecting the 'Teamfight Tactics Updates and News' text on the top of the page. All views are public and do not require authentication.
+Route from main page to comments page by selecting any of the comments buttons (to the left of each post), also route from comments page back to the main app page by selecting the 'Teamfight Tactics Updates and News' text on the top of the page. Also there is a route from the main page to the edit posts page and a route bck to the main page. All views are public and do not require authentication.
 
 - /articles (public)- displays all published articles - title and author only.
 - /articles/:id (private) - detail view of a particular article.
@@ -50,7 +55,7 @@ Screenshot included of expanded Storybook.
 
 ## Independent learning attempt
 
-I researched how to add a login/signup page so that I coould have users for the app but I was unfortunately unable to get this to work.
+I researched how to add a login/signup page so that I could have users for the app but I was unfortunately unable to get this to work.
 
 [model]: ./img/model.PNG
 [main]: ./img/main.PNG
